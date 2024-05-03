@@ -50,11 +50,16 @@ function updateHTML(userInfo, userRepositorio) {
 
     // Atualizar nome
     const nameElement = document.querySelector(".name");
-    nameElement.textContent = userInfo.name || "N/A";
+    nameElement.textContent = userInfo.name || "Name: -----";
+    if (nameElement.textContent == "Name: -----") {
+        document.querySelector(".alert").innerHTML = "ESSE USUÁRIO NÃO EXISTE"
+    } else {
+        document.querySelector(".alert").innerHTML = ""
+    }
 
     // Atualizar biografia
     const bioElement = document.querySelector(".bio");
-    bioElement.textContent = userInfo.bio || "N/A";
+    bioElement.textContent = userInfo.bio || "Bio: ---------";
 
      // Atualizar lista de repositórios
      const reposElement = document.querySelector(".repolist");
